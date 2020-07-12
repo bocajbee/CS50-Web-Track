@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+{% block main %}
+
+<!-- alert for when stock is bought -->
+<div class ="alert-messages">
+  {% if bought %}
+  <!-- div containing the error message-->
+  <div class="alert alert-primary fade show p-1" role="alert" style="position:abolute;z-index:999">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ bought }}
+  </div>
+  {% endif %}
+</div>
+
+<!-- alert for when stock is sold -->
+<div class ="alert-messages">
+  {% if sold %}
+  <!-- div containing the error message-->
+  <div class="alert alert-primary fade show p-1" role="alert" style="position:abolute;z-index:999">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ sold }}
+  </div>
+  {% endif %}
+</div>
+
+<!-- alert for when user logs in -->
+<div class ="alert-messages">
+  {% if success_login %}
+  <!-- div containing the error message-->
+  <div class="alert alert-primary fade show p-1" role="alert" style="position:abolute;z-index:999">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{ success_login }}
+  </div>
+  {% endif %}
+</div>
+
+<!-- js to auto close the boostrap alert -->
+<script>
+  // hide and show the error
+  $(document).ready(function() {
+    // function to hide the alert
+    setTimeout(function() {
+      $(".alert").alert('close');
+    }, 2500);
+  });
+</script>
+
+<!-- Table to display the users stocks -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!-- Table headers -->
+      <th>Symbol</th>
+      <th>Name</th>
+      <th>Shares</th>
+      <th>Price</th>
+      <th>TOTAL</th>
+    </tr>
+  </thead>
+  <!-- Table foot where the total goes -->
+  <tfoot>
+    <tr>
+      <td colspan="4"></td>
+      <!-- Table data inside of the foot -->
+      <td> {{ net_worth }} </td>
+    </tr>
+  </tfoot>
+
+  <!-- Table body -->
+  <tbody>
+    <!-- Loop to create table rows containing each list of the passed in dicts -->
+    {% for dictionary in owned_stock %}
+    <tr>
+      <!-- Render each column witht he appropirate parts of the dict  -->
+      <td>{{ dictionary["symbol"] }}</td>
+      <td>{{ dictionary["name"] }}</td>
+      <td>{{ dictionary["amount"] }}</td>
+      <td>{{ dictionary["price"] }}</td>
+      <td>{{ dictionary["total"] }}</td>
+    </tr>
+    {% endfor %}
+
+    <!-- Bottom cash amount in bottom row of table -->
+    <tr>
+      <td>CASH</td>
+      <td colspan="3"></td>
+      <td> {{ cash_amount }} </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

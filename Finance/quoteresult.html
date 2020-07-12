@@ -1,0 +1,15 @@
+<!-- https://cs50.harvard.edu/x/2020/tracks/web/finance/ -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+<body>
+    {% block main %}
+
+        A share of {{ returned_name }}  {{ returned_symbol }} costs {{ returned_price }}.
+
+    {% endblock %}
+</body>
