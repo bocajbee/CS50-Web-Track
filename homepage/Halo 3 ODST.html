@@ -1,0 +1,91 @@
+<!--https://cs50.harvard.edu/x/2020/tracks/web/homepage/-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- https://www.w3schools.com/html/html_responsive.asp _-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="styles.css" rel="stylesheet">
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Overview</title>
+</head>
+
+<body>
+  <!-- Top Navigation Menu -->
+  <!-- https://getbootstrap.com/docs/4.0/components/navs/ -->
+  <div>
+    <nav class="nav justify-content-center">
+      <!-- Top Navigation Menu links -->
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="Halo Reach.html">Halo Reach</a></li>
+      <li><a href="Halo CE.html">Halo Combat Evolved: Anniversary</a></li>
+      <li><a href="Halo 2.html">Halo 2: Anniversary</a></li>
+      <li><a href="Halo 3.html">Halo 3</a></li>
+      <li><a href="Halo 3 ODST.html">Halo 3: ODST</a></li>
+    </nav>
+  </div>
+  <!-- links to my other html in hamburger menu pages -->
+  <!-- Hamburger Navigation links (hidden by default) -->
+  <div class="topnav">
+    <a href="#home" class="active"></a>
+    <div id="myLinks">
+      <a href="index.html">Overview</a>
+      <a href="Halo Reach.html">Halo Reach</a>
+      <a href="Halo CE.html">Halo Combat Evolved: Anniversary</a>
+      <a href="Halo 2.html">Halo 2: Anniversary</a>
+      <a href="Halo 3.html">Halo 3</a>
+      <a href="Halo 3 ODST.html">Halo 3: ODST</a>
+    </div>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links !-->
+    <!-- calls a JS myFunction() inside of script.js, only when the hamburger menu icon is clicked "onclick" -->
+    <a href="javascript:void(0);" class="icon" onclick="hamburgerButton()">
+      <i class="fa fa-bars"></i>
+      <script type="text/javascript" src="./script.js"></script>
+    </a>
+  </div>
+
+  <div class="flex-container">
+    <!-- https://www.youtube.com/watch?v=tiV4hJ30zIc -->
+    <div class ="col-md-6">
+      <div class="margin: auto 1.5em; display: inline-block">
+        <!-- https://www.youtube.com/watch?v=x99gNzHtm0k -->
+        <!-- https://stackoverflow.com/questions/16466240/adjusting-and-image-size-to-fit-a-div-bootstrap -->
+        <img src="odst.jpg" style="width:100%"; class="img-fluid">
+      </div>
+    </div>
+
+    <div class ="col-md-6">
+      <div class="margin: auto 1.5em; display: inline-block">
+        <h3>Prepare to drop</h3>
+        <p>
+          Known for their courage, valor, and penchant for tackling the impossible, Orbital Drop Shock Troopers, pride themselves on being the first unit deployed into hostile situations. In Halo 3: ODST, return to familiar ground as one of these elite soldiers and drop into the ruined city of New Mombasa to search for clues behind the Covenant’s
+          catastrophic attack on the sprawling metropolis. Developed by Bungie, this Halo 3 prologue puts players into the boots of an ODST during one of the great untold stories of
+          Halo 2, the Battle of Earth. Enjoy Firefight, a new cooperative mode that pits you and your ODST teammates against waves of Covenant invaders. Engage in the intense
+          online multiplayer battles with the extensive collection of Halo 3 multiplayer maps.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class ="flex-container">
+    <div class= "iframe-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/BdSbSPR3bto" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Steam link -->
+  <div class="img-container">
+    <a href="https://store.steampowered.com/app/1064272/Halo_3_ODST/">
+      <img src="steam.jpg">
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>A CS50 Project By: Jacob Allen</p>
+  </div>
+</body>
+</html>

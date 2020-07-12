@@ -1,0 +1,97 @@
+<!--https://cs50.harvard.edu/x/2020/tracks/web/homepage/-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- https://www.w3schools.com/html/html_responsive.asp _-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="styles.css" rel="stylesheet">
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Overview</title>
+</head>
+
+<body>
+  <div>
+    <!-- Top Navigation Menu -->
+    <!-- https://getbootstrap.com/docs/4.0/components/navs/ -->
+    <nav class="nav justify-content-center">
+      <!-- Top Navigation Menu links -->
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="Halo Reach.html">Halo Reach</a></li>
+      <li><a href="Halo CE.html">Halo Combat Evolved: Anniversary</a></li>
+      <li><a href="Halo 2.html">Halo 2: Anniversary</a></li>
+      <li><a href="Halo 3.html">Halo 3</a></li>
+      <li><a href="Halo 3 ODST.html">Halo 3: ODST</a></li>
+    </nav>
+  </div>
+  <!-- links to my other html in hamburger menu pages -->
+  <!-- Hamburger Navigation links (hidden by default) -->
+  <div class="topnav">
+    <a href="#home" class="active"></a>
+    <div id="myLinks">
+      <a href="index.html">Overview</a>
+      <a href="Halo Reach.html">Halo Reach</a>
+      <a href="Halo CE.html">Halo Combat Evolved: Anniversary</a>
+      <a href="Halo 2.html">Halo 2: Anniversary</a>
+      <a href="Halo 3.html">Halo 3</a>
+      <a href="Halo 3 ODST.html">Halo 3: ODST</a>
+    </div>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links !-->
+    <!-- calls a JS myFunction() inside of script.js, only when the hamburger menu icon is clicked "onclick" -->
+    <a href="javascript:void(0);" class="icon" onclick="hamburgerButton()">
+      <i class="fa fa-bars"></i>
+      <script type="text/javascript" src="./script.js"></script>
+    </a>
+  </div>
+
+  <!-- https://www.w3schools.com/css/css3_flexbox.asp -->
+  <div class="flex-container">
+    <!-- https://www.youtube.com/watch?v=tiV4hJ30zIc -->
+    <div class ="col-md-6">
+      <div class="margin: auto 1.5em; display: inline-block">
+        <!-- https://www.youtube.com/watch?v=x99gNzHtm0k -->
+        <!-- https://stackoverflow.com/questions/16466240/adjusting-and-image-size-to-fit-a-div-bootstrap -->
+        <img src="mccpc.jpg"; style="width:100%"; class="img-fluid">
+      </div>
+    </div>
+
+    <div class ="col-md-6">
+      <div class="margin: auto 1.5em; display: inline-block">
+        <h3>MCC comes to PC</h3>
+        <p>
+          For the first time, the series that changed console gaming forever comes to PC with six blockbuster games in one epic experience. This bundle includes all titles in the
+          collection that will be delivered over time and available for individual purchase, beginning now with Halo: Reach. Featuring Halo: Reach along with Halo: Combat Evolved
+          Anniversary, Halo 2: Anniversary, Halo 3, the Halo 3: ODST Campai gn and Halo 4, the Master Chief Collection offers players their own exciting journey through the epic saga.
+          Each adds its own multiplayer maps, modes and game types, building a unified multiplayer suite that expands over time. When completed in 2020, the collection will contain
+          over 140 multiplayer maps and 67 campaign missions, making this the PC collection Halo fans have been waiting for. Halo: The Master Chief Collection is available
+          for purchase via Microsoft Store, Steam, or with your Microsoft PC Game Pass subscription.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- https://www.w3schools.com/css/css3_flexbox.asp -->
+  <div class ="flex-container">
+    <div class= "iframe-container">
+      <iframe width="448" height="252" src="https://www.youtube.com/embed/88VBun17AMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Steam link -->
+  <div class="img-container">
+    <a href="https://store.steampowered.com/app/976730/Halo_The_Master_Chief_Collection/">
+      <img src="steam.jpg">
+    </a>
+  </div>
+
+  <div class="footer">
+    <div class= "signature">
+      <p>A CS50 Project By: Jacob Allen</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!--https://cs50.harvard.edu/x/2020/tracks/web/homepage/-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- https://www.w3schools.com/html/html_responsive.asp _-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="styles.css" rel="stylesheet">
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Overview</title>
+</head>
+<body>
+  <!-- Top Navigation Menu -->
+  <!-- https://getbootstrap.com/docs/4.0/components/navs/ -->
+  <div>
+    <nav class="nav justify-content-center">
+      <!-- Top Navigation Menu links -->
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="Halo Reach.html">Halo Reach</a></li>
+      <li><a href="Halo CE.html">Halo Combat Evolved: Anniversary</a></li>
+      <li><a href="Halo 2.html">Halo 2: Anniversary</a></li>
+      <li><a href="Halo 3.html">Halo 3</a></li>
+      <li><a href="Halo 3 ODST.html">Halo 3: ODST</a></li>
+    </nav>
+  </div>
+  <!-- links to my other html in hamburger menu pages -->
+  <!-- Hamburger Navigation links (hidden by default) -->
+  <div class="topnav">
+    <a href="#home" class="active"></a>
+    <div id="myLinks">
+      <a href="index.html">Overview</a>
+      <a href="Halo Reach.html">Halo Reach</a>
+      <a href="Halo CE.html">Halo Combat Evolved: Anniversary</a>
+      <a href="Halo 2.html">Halo 2: Anniversary</a>
+      <a href="Halo 3.html">Halo 3</a>
+      <a href="Halo 3 ODST.html">Halo 3: ODST</a>
+    </div>
+    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links !-->
+    <!-- calls a JS myFunction() inside of script.js, only when the hamburger menu icon is clicked "onclick" -->
+    <a href="javascript:void(0);" class="icon" onclick="hamburgerButton()">
+      <i class="fa fa-bars"></i>
+      <script type="text/javascript" src="./script.js"></script>
+    </a>
+  </div>
+
+  <div class="flex-container">
+    <!-- https://www.youtube.com/watch?v=tiV4hJ30zIc -->
+    <div class ="col-md-6">
+      <div class="margin: auto 1.5em; display: inline-block">
+        <!-- https://www.youtube.com/watch?v=x99gNzHtm0k -->
+        <!-- https://stackoverflow.com/questions/16466240/adjusting-and-image-size-to-fit-a-div-bootstrap -->
+        <img src="halo3.jpg" style="width:100%"; class="img-fluid">
+      </div>
+    </div>
+
+    <div class ="col-md-6">
+      <div class="margin: auto 1.5em; display: inline-block">
+        <h3>Finish the fight</h3>
+        <p>
+          The legendary saga continues with Halo 3 as the Master Chief returns to uncover an ancient secret, and bring the conflict between the Covenant, the Flood,
+          and the entire Human race to a dramatic, pulse-pounding climax. Developed by Bungie and published by Microsoft, Halo 3 is the concluding chapter in the Halo
+          trilogy—an international award-winning action series that grew into a global entertainment phenomenon, selling more than 14.5 million games worldwide,
+          logging more than 650 million hours of multiplayer action on Xbox Live.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class ="flex-container">
+    <div class= "iframe-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/MapTlW80f6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Steam link -->
+  <div class="img-container">
+    <a href="https://store.steampowered.com/app/1064271/Halo_3/">
+      <img src="steam.jpg">
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>A CS50 Project By: Jacob Allen</p>
+  </div>
+
+</body>
+</html>

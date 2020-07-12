@@ -1,0 +1,213 @@
+/* https://cs50.harvard.edu/x/2020/tracks/web/homepage/ */
+
+body {
+  margin: 0;
+  padding 0;
+}
+
+body2 {
+  max-width: 1920px;
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+
+/* https://stackoverflow.com/questions/4296012/hide-div-if-screen-is-smaller-than-a-certain-width */
+@media screen and (max-width: 975px) {
+  .nav {
+    display: none !important;
+  }
+}
+
+/* https://stackoverflow.com/questions/4296012/hide-div-if-screen-is-smaller-than-a-certain-width */
+@media screen and (min-width: 976px) {
+  .topnav {
+    display: none !important;
+  }
+}
+
+/* https://www.w3schools.com/css/css3_flexbox.asp */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top:30px;
+  max-width: 1300px;
+}
+
+.col-md-12{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: #ffffff
+}
+
+.col-md-6{
+  margin-top: 20px;
+  margin-bottom: 28px;
+  margin-left: 0px;
+  margin-right: 0px;
+
+}
+/* footer of website */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  margin-top: 45px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+/* youtube video container */
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin-bottom: 48px;
+  height: 0;
+
+}
+/* youtube video inside of container */
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 1%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Style the paragraphs */
+p {
+  font-size: min(3vw, 18px);
+  margin-bottom: 0px;
+  padding-right: 10px;
+  padding-left: 15px;
+}
+
+/* Style the headers */
+h3 {
+  font-size: min(5vw, 26px);
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 3px;
+}
+
+div {
+
+}
+
+/* Style the images */
+img{
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+/* navbar */
+.nav {
+  background-color: #404040;
+  align-items: center;
+  color: #ffffff
+  list-style: none;
+  text-align: center;
+  padding: 20px 0 20px 0;
+}
+/* navbar list */
+.nav > li {
+  display: inline-block;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+/* navbar list text */
+.nav > li > a{
+  text-decoration: none;
+  color: #ffffff;
+}
+/* navbar */
+.nav > li > a:hover {
+  color: #c1c1c1;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+#myLinks {
+  display: none;
+}
+
+/* style the hamburger menu options*/
+.topnav #myLinks a {
+  padding: 15px 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+  color: white;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 20px 20px;
+  padding-bottom: 49px;
+  padding-right: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: #404040;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-bottom: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #404040;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #404040;
+  color: white;
+
+}
+
+/* image container for steam icon */
+.img-container {
+  position: relative;
+  margin: auto;
+  margin-bottom: 85px;
+  top: 0;
+  right: 0;
+  bottom: 100px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+}
+
+/* Add a grey background color on mouse-over */
+.img-container:hover {
+  opacity: .5;
+}
