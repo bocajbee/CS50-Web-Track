@@ -7,14 +7,14 @@ Buy
 {% block main %}
 
 <!-- alert for any errors passed in -->
-<div>
+<div class ="alert-messages">
   {% if errors %}
-  <div class="alert alert-danger" role="alert">
+  <div class="alert alert-danger fade show p-1" role="alert" style="position:abolute;z-index:999">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     {{ errors }}
   </div>
   {% endif %}
-<div>
+</div>
 
 <!-- js to auto close the boostrap alert -->
 <script>
