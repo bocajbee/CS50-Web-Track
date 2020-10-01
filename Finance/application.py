@@ -8,10 +8,13 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd
+from helpers import login_required, lookup, usd
 
 # Configure application
 app = Flask(__name__)
+
+# Configure session to use filesystem (instead of signed cookies)
+app.config["SESSION_FILE_DIR"] = mkdtemp()
 # ensure that user sessions when they are logged in are not permanent
 app.config["SESSION_PERMANENT"] = False
 # ensure the location that we want to store the data for user sessions is going to be in the file system of the webserver we'll be running this application from (CS50 IDE)
@@ -33,11 +36,6 @@ def after_request(response):
 # Custom filter
 app.jinja_env.filters["usd"] = usd
 
-# Configure session to use filesystem (instead of signed cookies)
-app.config["SESSION_FILE_DIR"] = mkdtemp()
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
@@ -61,7 +59,7 @@ def index():
     # print(stock_dict)
 
     # re-render the https://finance.cs50.net/ homepage to display the newly modified owned_stock list of dicts
-    return render_template("index.html", owned_stock=owned_stock, cash_amount=usd(cash_amount), net_worth=net_worth)
+    return render_template("index.html", owned_stock=owned_stock, cash_amount=usd(cash_amount), net_worth=usd(net_worth))
 
 # app route to buy stock
 @app.route("/buy", methods=["GET", "POST"])
@@ -466,14 +464,6 @@ def sell():
         # render the blue success login banner upon login
         return render_template("index.html", sold=sold[0], owned_stock=owned_stock, cash_amount=usd(funct_cash_amount), net_worth=usd(net_worth))
 
-
-def errorhandler(e):
-    """Handle error"""
-    if not isinstance(e, HTTPException):
-        e = InternalServerError()
-    return apology(e.name, e.code)
-
-
 # function that will be call after a transaction is made in our db in buy or sell. pass in the following as paramaters from buy() or sell() to this function:
 def record_history(user_id, stock_symbol, num_of_shares, stock_price, buy_or_sell):
 
@@ -481,9 +471,6 @@ def record_history(user_id, stock_symbol, num_of_shares, stock_price, buy_or_sel
     db.execute("INSERT into 'history' ('id', 'symbol', 'shares', 'price', 'buyvssell') VALUES (?, ?, ?, ?, ?);",
                 user_id, stock_symbol, num_of_shares, stock_price, buy_or_sell)
 
-# Listen for errors
-for code in default_exceptions:
-    app.errorhandler(code)(errorhandler)
 
 # for passing a rendered index html with a "bought!" or "sold!" banner
 def send_to_index():
